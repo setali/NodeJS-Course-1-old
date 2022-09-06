@@ -3,20 +3,24 @@ import Article from '../models/article'
 export async function home (req, res) {
   const articles = await Article.findAll()
 
+  console.log(req.session.user)
   res.render('index', {
     title: 'Home Page',
-    articles
+    articles,
+    user: req.user
   })
 }
 
 export function about (req, res) {
   res.render('about', {
-    title: 'About us'
+    title: 'About us',
+    user: req.user
   })
 }
 
 export function contact (req, res) {
   res.render('contact', {
-    title: 'Contact us'
+    title: 'Contact us',
+    user: req.user
   })
 }
