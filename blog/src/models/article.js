@@ -16,4 +16,6 @@ Article.init(
   { sequelize, modelName: 'article' }
 )
 
+
+
 export default Article
